@@ -1,0 +1,89 @@
+<html> 
+ <style>
+     h1{
+        font-size: 3rem;
+    font-weight: 100;
+    margin: 1rem 0 3 rem;
+    text-align: center;
+    color: rgb(3, 14, 51);
+    font-family: 'Hind', sans-serif;
+     }
+
+     h2{
+        font-size: 2.5rem;
+    font-weight: 50;
+    margin: 1rem 0 3 rem;
+    text-align: center;
+    color: whitesmoke; 
+    font-family: 'Hind', sans-serif;
+     }
+     .container{
+
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 2rem;
+     }
+     #minus{
+         background-color: red;
+         font-size: 1.4rem;
+         border-radius: 8px;
+         width: 30px;
+         color: whitesmoke;
+     }
+
+     #reset{
+         background-color: rgb(3, 14, 51);
+         font-size: 1.4rem;
+         border-radius: 8px;
+         color: whitesmoke;
+         width: 80px;
+     }
+     #plus{
+         background-color: green;
+         font-size: 1.4rem;
+         border-radius: 8px;
+         width: 30px;
+         color: whitesmoke;
+     }
+ </style>
+<body style="background-color: rgb(128, 163, 209);"> 
+<h1>Counter</h1> 
+<div class = "container">
+<h2 id="title"> 0 </h2> 
+<button id="minus"><span>&#8722</span></button> 
+<button id="reset">Reset</button> 
+<button id="plus"><span>&#43;</span></button> 
+</div>
+</body> 
+ <script>
+     var title = document.getElementById("title");
+     var plus = document.getElementById("plus");
+     var reset = document.getElementById("reset");
+     var minus = document.getElementById("minus");
+
+     var conter = 0;
+   
+     plus.onclick = function(){
+         counter++;
+         title.innerText = counter;
+         document.getElementById("minus").disabled = false;
+     }
+     
+     reset.onclick = function(){
+        counter = 0;
+        title.innerText = "0"; 
+     }
+
+     minus.onclick = function(){
+         if(counter == 0){
+             document.getElementById("minus").disabled = true;
+         }
+         else{
+             counter--;
+             title.innerText = counter;
+         }
+     }
+ </script>
+</html> 
